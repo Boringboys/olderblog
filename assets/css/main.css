@@ -3337,7 +3337,7 @@
 									padding: 0 1.5em;
 								}
 
-									#header nav > ul > li > a.menuToggle span {
+									#header nav > ul > li > a.menuToggle #menu_menu {
 										display: none;
 									}
 
