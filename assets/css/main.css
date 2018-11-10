@@ -3331,6 +3331,10 @@
 								width: 2em;
 							}
 
+							#header nav > ul > li > a.menuToggle #menu_icon {
+								display: none;
+							}
+
 							@media screen and (max-width: 736px) {
 
 								#header nav > ul > li > a.menuToggle {
@@ -3340,6 +3344,12 @@
 									#header nav > ul > li > a.menuToggle #menu_menu {
 										display: none;
 									}
+
+									#header nav > ul > li > a.menuToggle #menu_icon {
+										display: inline;
+									}
+
+
 
 							}
 
