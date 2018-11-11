@@ -49,7 +49,7 @@
 								<li><a href="#footer" class="button special">Contact me</a></li>
 							</ul>
 						</div>
-						<a href="#one" class="more scrolly">more</a>
+						<a href="#one" class="more scrolly">learn more</a>
 					</section>
 
 				<!-- One -->
@@ -73,7 +73,7 @@
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content" id="md1" onclick="goblog(this)">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content" id="md1" data-name="huisufa" onclick="goblog(this)">
 								<h2>算法设计与分析<br />
 									回溯法
 								</h2>
@@ -81,14 +81,14 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2" onclick="goblog(this)">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2" data-name="diguiyufenzhi" onclick="goblog(this)">
 								<h2>Tortor dolore feugiat<br />
 								elementum magna</h2>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content" id="md3" onclick="goblog(this)">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content" id="md3" data-name="dongtaiguihua" onclick="goblog(this)">
 								<h2>Augue eleifend aliquet<br />
 								sed condimentum</h2>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
@@ -105,27 +105,27 @@
 								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane-o" id="md4" onclick="goblog(this)">
+								<li class="icon fa-paper-plane-o" id="md4" data-name="feibonaqishulie" onclick="goblog(this)">
 									<h3>Arcu accumsan</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-laptop" id="md5" onclick="goblog(this)">
+								<li class="icon fa-laptop" id="md5" data-name="guibingpaixu" onclick="goblog(this)">
 									<h3>Ac Augue Eget</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-code" id="md6" onclick="goblog(this)">
+								<li class="icon fa-code" id="md6" data-name="kuaisupaixu" onclick="goblog(this)">
 									<h3>Mus Scelerisque</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-headphones" id="md7" onclick="goblog(this)">
+								<li class="icon fa-headphones" id="md7" data-name="kuaisuxuanze" onclick="goblog(this)">
 									<h3>Mauris Imperdiet</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-heart-o" id="md8" onclick="goblog(this)">
+								<li class="icon fa-heart-o" id="md8" data-name="tanxinsuanfa" onclick="goblog(this)">
 									<h3>Aenean Primis</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-flag-o" id="md9" onclick="goblog(this)">
+								<li class="icon fa-flag-o" id="md9" data-name="zhufangfa" onclick="goblog(this)">
 									<h3>Tortor Ut</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
@@ -150,10 +150,10 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="index.html" class="icon fa-home"><span class="label">Home</span></a></li>
 							<li><a href="https://github.com/Boringboys" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon fa-code"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-bars"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-home"><span class="label">Dribbble</span></a></li>
 							<li><a href="mailto:w15005287135@163.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
@@ -174,8 +174,11 @@
 			<script>
 				function goblog(id)
 				{
-					document.cookie="name="+id.id;
-					window.location.href="generic.html";
+					var name=id.getAttribute("data-name");
+					console.log(name);
+					document.cookie="name="+name;
+					// alert(document.cookie);
+					// window.location.href="generic.html";
 				}
 			</script>
 

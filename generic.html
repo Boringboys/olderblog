@@ -24,9 +24,9 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
+											<li><a href="index.html">首页</a></li>
+											<li><a href="generic.html">文章</a></li>
+											<li><a href="elements.html">更多内容</a></li>
 											<li><a href="https://github.com/Boringboys/Boringboys.github.io" title="star me on github"><span class="icon fa-github fa-2x"><span class="label">Github</span></span>star me on github</a></li>
 											<!-- <li><a href="#">Sign Up</a></li> -->
 											<!-- <li><a href="#">Log In</a></li> -->
@@ -40,8 +40,8 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Generic Page</h2>
-							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+							<h2>书房</h2>
+							<p>香喷喷的文章已经端上桌了</p>
 						</header>
 						<section class="wrapper style5" id="wrapper_main">
 							<div class="inner" id="inner_main">
@@ -55,9 +55,9 @@
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="index.html" class="icon fa-home"><span class="label">Home</span></a></li>
+							<li><a href="https://github.com/Boringboys" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:w15005287135@163.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
 							
@@ -81,7 +81,7 @@
 				var con=new showdown.Converter();
 				var xmlhttp=new XMLHttpRequest();
 				var docnum=document.cookie.split("name=")[1].split(";")[0];
-				alert(docnum);
+				// alert(docnum);
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -94,7 +94,7 @@
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
 					}
 				}
-				xmlhttp.open("GET","https://www.boringboys.top/Resources.github.io/markdown/回溯法.md","true");
+				xmlhttp.open("GET","https://www.boringboys.top/Resources.github.io/markdown/"+docnum+".md","true");
 				xmlhttp.send();
 				
 				
