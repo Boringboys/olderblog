@@ -80,6 +80,8 @@
 			$(function(){
 				var con=new showdown.Converter();
 				var xmlhttp=new XMLHttpRequest();
+				var docnum=document.cookie.split("name=")[1].split(";")[0];
+				alert(docnum);
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)

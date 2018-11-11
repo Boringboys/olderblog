@@ -25,9 +25,9 @@
 									<a href="#menu" class="menuToggle"><span id="menu_icon" class="icon fa-bars fa-2x"><span class="label">Menu</span></span><span id="menu_menu">Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
+											<li><a href="index.html">首页</a></li>
+											<li><a href="generic.html">文章</a></li>
+											<li><a href="elements.html">更多内容</a></li>
 											<li><a href="https://github.com/Boringboys/Boringboys.github.io" title="star me on github"><span class="icon fa-github fa-2x"><span class="label">Github</span></span>star me on github</a></li>
 											<!-- <li><a href="#">Sign Up</a></li> -->
 											<!-- <li><a href="#">Log In</a></li> -->
@@ -49,7 +49,7 @@
 								<li><a href="#footer" class="button special">Contact me</a></li>
 							</ul>
 						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
+						<a href="#one" class="more scrolly">more</a>
 					</section>
 
 				<!-- One -->
@@ -73,22 +73,22 @@
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content"><a href="generic.html">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content" id="md1" onclick="goblog(this)">
 								<h2>算法设计与分析<br />
 									回溯法
 								</h2>
-								<p>回溯法（英语：backtracking）是暴力搜寻法中的一种</p></a>
+								<p>回溯法（英语：backtracking）是暴力搜寻法中的一种</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2" onclick="goblog(this)">
 								<h2>Tortor dolore feugiat<br />
 								elementum magna</h2>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content" id="md3" onclick="goblog(this)">
 								<h2>Augue eleifend aliquet<br />
 								sed condimentum</h2>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
@@ -105,27 +105,27 @@
 								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane-o">
+								<li class="icon fa-paper-plane-o" id="md4" onclick="goblog(this)">
 									<h3>Arcu accumsan</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-laptop">
+								<li class="icon fa-laptop" id="md5" onclick="goblog(this)">
 									<h3>Ac Augue Eget</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-code">
+								<li class="icon fa-code" id="md6" onclick="goblog(this)">
 									<h3>Mus Scelerisque</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-headphones">
+								<li class="icon fa-headphones" id="md7" onclick="goblog(this)">
 									<h3>Mauris Imperdiet</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-heart-o">
+								<li class="icon fa-heart-o" id="md8" onclick="goblog(this)">
 									<h3>Aenean Primis</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
-								<li class="icon fa-flag-o">
+								<li class="icon fa-flag-o" id="md9" onclick="goblog(this)">
 									<h3>Tortor Ut</h3>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
@@ -171,6 +171,13 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+				function goblog(id)
+				{
+					document.cookie="name="+id.id;
+					window.location.href="generic.html";
+				}
+			</script>
 
 	</body>
 </html>
