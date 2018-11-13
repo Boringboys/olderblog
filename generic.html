@@ -7,11 +7,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/123/css/mini_css.css">
 		<link rel="icon" href="images/favicon.png"/>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
+
+			<div id="mini_button">
+					
+				</div>
+				<div id="mini_box">
+					<div id="mini_list"> 
+			
+					</div>
+				</div>
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
@@ -79,6 +89,9 @@
 
 			<script>
 			$(function(){
+				var abc=document.getElementById("inner_main");
+
+
 				var con=new showdown.Converter();
 				var xmlhttp=new XMLHttpRequest();
 				var docnum=document.cookie.split("name=")[1].split(";")[0];
@@ -94,14 +107,16 @@
 						html=con.makeHtml(text);
 						// alert(html);
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
+
+						set_TOC(abc);
+
 					}
 				}
 				xmlhttp.open("GET","https://www.boringboys.top/Resources.github.io/markdown/"+docnum+".md","true");
 				xmlhttp.send();
 			});	
-			</script>
-			
-			
-
+			</script>			
+			   <script src="/123/js/mini_js.js"></script>
+			   <script src="/123/js/mini_js_2.js"></script>
 	</body>
 </html>

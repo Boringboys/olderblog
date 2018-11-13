@@ -1,0 +1,11 @@
+		*{padding: 0;margin: 0;}
+        #mini_box{width: 300px;background:rgba(55, 55, 55, 0.8);position: fixed;top: 10%; right:-300px;
+            border-radius:10px; opacity: 0;}
+        #mini_button{background: rgba(255, 255, 255, 0.5);width: 30px;display: inline-block;position: fixed;right: 20px;opacity: 0.2;
+            top: 100px; height: 30px; border-radius: 50%;display: inline-block;border-style: solid;border-color:rgb(59, 59, 59);border-width: 3px}
+        #mini_button_inner{background:rgb(68, 68, 68); position:relative; height: 26px;width: 26px; border-radius: 50%; top: 2.5px;left: 1.5px;}
+        #mini_list{background: rgba(55, 55, 55, 0);position: relative;top:2%;height: 96%;left: 10px;width: 280px;padding-top: 20px;padding-bottom: 20px;}
+        a.a_list:link{text-decoration: none;color: rgb(197, 194, 194)}
+        a.a_list:visited{color: rgb(223, 223, 223)}
+        a.a_list:hover{color:rgb(163, 163, 163);}
+        a.a_list:active{color: green}
