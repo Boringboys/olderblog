@@ -96,7 +96,7 @@
 				var xmlhttp=new XMLHttpRequest();
 				var docnum=document.cookie.split("name=")[1].split(";")[0];
 				document.title=docnum+"|Boringboys's blog";
-				// alert(docnum);
+				 alert(docnum);
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -112,7 +112,7 @@
 
 					}
 				}
-				xmlhttp.open("GET","https://www.boringboys.top/Resources.github.io/markdown/"+docnum+".md","true");
+				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
 				xmlhttp.send();
 			});	
 			</script>			
