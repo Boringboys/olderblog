@@ -1,6 +1,6 @@
         *{padding: 0;margin: 0;}
-        #audio_btn{background:rgba(68, 68, 68, 0.5); width: 35px;display: inline-block;position: fixed;left: 20px;opacity: 0.9;
-            top: 100px; height: 35px; border-radius: 50%;display: inline-block;}
+        #audio_btn{background:rgba(68, 68, 68, 0.5); width: 40px;display: inline-block;position: fixed;left: 50px;opacity: 0.9;
+            top: 100px; height: 40px;border-width:13px; border-radius:50%;display: inline-block;border-color: black;border-style: solid}
 
         #mini_box{width: 300px;background:rgba(55, 55, 55, 0.8);position: fixed;top: 10%; right:-300px;
             border-radius:10px; opacity: 0;}

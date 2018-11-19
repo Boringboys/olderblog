@@ -13,9 +13,11 @@
             audio_btn.onclick=function(){
                 if(Ispaly){
                     pauseVid();
+                    audio_btn.style.background="rgba(100,0,0,0.5)";
                     Ispaly=false;
                 }else{
                     playVid();
+                    audio_btn.style.background="rgba(0,100,100,0.5)"
                     Ispaly=true;
                 }
             }
