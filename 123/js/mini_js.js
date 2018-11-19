@@ -6,18 +6,22 @@
             var myVideo=document.getElementById("music_play");
             var audio_btn=document.getElementById("audio_btn");
 
+            var deg=0;
             var Ispaly=false;
 			var speed=20;//速度
-            var timer,timer2;
+            var timer,timer2,time3;
             //播放/暂停音乐
             audio_btn.onclick=function(){
                 if(Ispaly){
                     pauseVid();
                     audio_btn.style.background="rgba(100,0,0,0.5)";
+                    clearInterval(time3);
                     Ispaly=false;
                 }else{
                     playVid();
-                    audio_btn.style.background="rgba(0,100,100,0.5)"
+                    audio_btn.style.background="rgba(0,100,100,0.5)";
+                    time3=setInterval(xuanzhuan,50);
+                    // xuanzhuan();
                     Ispaly=true;
                 }
             }
@@ -91,6 +95,20 @@
 					box.style.right=r-300-speed+'px';	//移动
                     box.style.opacity=Number(arl)-0.1;
 				}
+            }
+
+            //按钮旋转
+            function xuanzhuan(){
+                if(deg>=360){
+                    deg-=353;
+                }else{
+                    deg+=7;
+                }
+                audio_btn.style.webkitTransform = "rotate("+deg+"deg)";
+                audio_btn.style.mozTransform =  "rotate("+deg+"deg)";
+                audio_btn.style.msTransform =  "rotate("+deg+"deg)";
+                audio_btn.style.oTransform =  "rotate("+deg+"deg)";
+                audio_btn.style.transform =  "rotate("+deg+"deg)";
             }
 
             //播放
