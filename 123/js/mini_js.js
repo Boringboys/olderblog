@@ -3,9 +3,23 @@
 			var box=document.getElementById('mini_box');
             var btn=document.getElementById('mini_button');
             // var abc=document.getElementById("main");
+            var myVideo=document.getElementById("music_play");
+            var audio_btn=document.getElementById("audio_btn");
 
+            var Ispaly=false;
 			var speed=20;//速度
-			var timer,timer2;
+            var timer,timer2;
+            //播放/暂停音乐
+            audio_btn.onclick=function(){
+                if(Ispaly){
+                    pauseVid();
+                    Ispaly=false;
+                }else{
+                    playVid();
+                    Ispaly=true;
+                }
+            }
+
 			//鼠标点击事件
 			btn.onclick=function(){
 				 clearInterval(timer2);//清除定时器
@@ -75,8 +89,19 @@
 					box.style.right=r-300-speed+'px';	//移动
                     box.style.opacity=Number(arl)-0.1;
 				}
-				
             }
+
+            //播放
+            function playVid()
+            {
+                myVideo.play();
+            }
+            //暂停
+            function pauseVid()
+            {
+                myVideo.pause();
+            }
+
             // set_TOC(abc);
 			
 		}
