@@ -172,6 +172,23 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
+				$(function(){
+					var xmlhttp=new XMLHttpRequest();
+
+					xmlhttp.onreadystatechange=function()
+						{
+							if (xmlhttp.readyState==4 && xmlhttp.status==200)
+							{
+								alert(xmlhttp.response);
+								// <h2>have<br />
+								// 	---
+								// </h2>
+								// <p>------</p>
+							}
+						}
+						xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/articles.json","true");
+						xmlhttp.send();
+				})
 				function goblog(id)
 				{
 					var name=id.getAttribute("data-name");
