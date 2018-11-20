@@ -73,25 +73,33 @@
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content" id="md1" data-name="家用路由器的配置" onclick="goblog(this)">
-								<h2>have<br />
-									---
-								</h2>
-								<p>------</p>
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content" id="md1">
+								<div data-name="家用路由器的配置" onclick="goblog(this)">
+									<h2>have<br />
+										---
+									</h2>
+									<p>------</p>
+								</div>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2" data-name="递归与分治" onclick="goblog(this)">
-								<h2>----<br />
-								---</h2>
-								<p>------</p>
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content" id="md2">
+								<div data-name="家用路由器的配置" onclick="goblog(this)">
+									<h2>have<br />
+										---
+									</h2>
+									<p>------</p>
+								</div>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content" id="md3" data-name="动态规划" onclick="goblog(this)">
-								<h2>----<br />
-								---</h2>
-								<p>------</p>
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content" id="md3"">
+								<div data-name="家用路由器的配置" onclick="goblog(this)">
+									<h2>have<br />
+										---
+									</h2>
+									<p>------</p>
+								</div>
 							</div>
 						</section>
 					</section>
@@ -105,29 +113,52 @@
 								欢迎互相交流和学习</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane-o" id="md4" data-name="斐波那契数列" onclick="goblog(this)">
-									<h3>----</h3>
-									<p>------</p>
+								<li class="icon fa-paper-plane-o" id="md4">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
 								</li>
-								<li class="icon fa-laptop" id="md5" data-name="归并排序" onclick="goblog(this)">
-									<h3>----</h3>
-									<p>------</p>
+								<li class="icon fa-laptop" id="md5">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
 								</li>
-								<li class="icon fa-code" id="md6" data-name="快速排序" onclick="goblog(this)">
-									<h3>----</h3>
-									<p>------</p>
+								<li class="icon fa-code" id="md6">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
 								</li>
-								<li class="icon fa-headphones" id="md7" data-name="快速选择" onclick="goblog(this)">
-									<h3>----</h3>
-									<p>------</p>
+								<li class="icon fa-headphones" id="md7">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
 								</li>
-								<li class="icon fa-heart-o" id="md8" data-name="贪心算法" onclick="goblog(this)">
-									<h3>----</h3>
-									<p> ------</p>
-								</li>
-								<li class="icon fa-flag-o" id="md9" data-name="主方法求解递归方程" onclick="goblog(this)">
-									<h3>----</h3>
-									<p>------</p>
+								<li class="icon fa-heart-o" id="md8">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
+								<li class="icon fa-flag-o" id="md9">
+									<div data-name="家用路由器的配置" onclick="goblog(this)">
+											<h2>have<br />
+												---
+											</h2>
+											<p>------</p>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -179,11 +210,33 @@
 						{
 							if (xmlhttp.readyState==4 && xmlhttp.status==200)
 							{
-								alert(xmlhttp.response);
-								// <h2>have<br />
-								// 	---
-								// </h2>
-								// <p>------</p>
+								var obj=eval("("+xmlhttp.response+")");
+								console.log(obj.array.length);
+								for(var i=0;i<obj.array.length&&i<9;i++)
+								{
+									var time=obj.array[i].update;
+									var SS=   time%100;
+									var MM=   time%10000-SS;
+									var HH=   time%1000000-MM-SS;
+									var day=  time%100000000-HH-MM-SS;
+									var month=time%10000000000-day-HH-MM-SS;
+									var year= time%100000000000000-month-day-HH-MM-SS;
+									SS=SS;
+									MM=MM/100;
+									HH=HH/10000;
+									day=day/1000000;
+									month=month/100000000;
+									year=year/10000000000;
+									
+									document.getElementById("md"+(i+1)).innerHTML="<div data-name="+obj.array[i].firstname+obj.array[i].lastname+" onclick=\"goblog(this)\">"+
+																				"<h2>"+obj.array[i].firstname+"<br/>"+
+																				obj.array[i].lastname+
+																				"</h2>"+
+																				"<p>"+obj.array[i].abstract+"</p>"+
+																				"<p>最近更新："+year+"-"+month+"-"+day+"</p>"
+																				"</div>";
+								}
+
 							}
 						}
 						xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/articles.json","true");
@@ -192,7 +245,7 @@
 				function goblog(id)
 				{
 					var name=id.getAttribute("data-name");
-					console.log(name);
+					// console.log(name);
 					document.cookie="name="+name;
 					// alert(document.cookie);
 					window.location.href="generic.html";
