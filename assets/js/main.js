@@ -1,7 +1,6 @@
 /*
-	Spectral by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	update at 2018.11.20
+	by boringboys
 */
 
 (function($) {
@@ -94,6 +93,26 @@
 				});
 
 			}
+
+			var xmlhttp=new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange=function()
+				{
+					if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+						alert(xmlhttp.response);
+						// document.getElementById("inner_main").innerHTML=xmlhttp.responseText;
+						// var text=xmlhttp.response;
+						// html=con.makeHtml(text);
+						// alert(html);
+						// document.getElementById('inner_main').innerHTML=con.makeHtml(text);
+
+						// set_TOC(abc);
+
+					}
+				}
+				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
+				xmlhttp.send();
 
 	});
 
