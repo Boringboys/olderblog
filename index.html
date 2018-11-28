@@ -211,6 +211,7 @@
 							if (xmlhttp.readyState==4 && xmlhttp.status==200)
 							{
 								var obj=eval("("+xmlhttp.response+")");
+								console.log(obj.length);
 								console.log(obj);
 								for(var i=0;i<obj.length&&i<9;i++)
 								{
