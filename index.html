@@ -211,10 +211,11 @@
 							if (xmlhttp.readyState==4 && xmlhttp.status==200)
 							{
 								var obj=eval("("+xmlhttp.response+")");
-								console.log(obj.array.length);
-								for(var i=0;i<obj.array.length&&i<9;i++)
+								console.log(obj);
+								for(var i=0;i<obj.length&&i<9;i++)
 								{
-									var time=obj.array[i].update;
+									var i2=obj.length-i-1;
+									var time=obj[i2].update;
 									var SS=   time%100;
 									var MM=   time%10000-SS;
 									var HH=   time%1000000-MM-SS;
@@ -228,11 +229,11 @@
 									month=month/100000000;
 									year=year/10000000000;
 									
-									document.getElementById("md"+(i+1)).innerHTML="<div data-name="+obj.array[i].firstname+obj.array[i].lastname+" onclick=\"goblog(this)\">"+
-																				"<h2>"+obj.array[i].firstname+"<br/>"+
-																				obj.array[i].lastname+
+									document.getElementById("md"+(i+1)).innerHTML="<div data-name="+obj[i2].firstname+obj[i2].lastname+" onclick=\"goblog(this)\">"+
+																				"<h2>"+obj[i2].firstname+"<br/>"+
+																				obj[i2].lastname+
 																				"</h2>"+
-																				"<p>"+obj.array[i].abstract+"</p>"+
+																				"<p>"+obj[i2].abstract+"</p>"+
 																				"<p>最近更新："+year+"-"+month+"-"+day+"</p>"
 																				"</div>";
 								}
