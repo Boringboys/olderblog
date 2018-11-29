@@ -13,13 +13,6 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
-			<div id="audio_btn" class="icon fa-music">
-			</div>
-			<div id="mini_button"></div>
-			<div id="mini_box">
-				<div id="mini_list"></div>
-			</div>
-
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -53,11 +46,10 @@
 						</header>
 						<section class="wrapper style5" id="wrapper_main">
 							<div class="inner" id="inner_main">
-
+								<!-- 嵌入文章 -->
 							</div>
 						</section>
 					</article>
-					<audio id="music_play" preload="metadata" loop="loop" src="https://boringboys-1254394685.cos.ap-shanghai.myqcloud.com/%E7%8E%8B%E5%A4%87%20-%20%E4%B8%A4%E5%B0%8F%E6%97%A0%E7%8C%9C.mp3"></audio>
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -84,7 +76,6 @@
 			<script src="showdown-1.8.7/dist/showdown.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
 			<script>
 			$(function(){
 				var abc=document.getElementById("inner_main");
@@ -103,16 +94,11 @@
 						// document.getElementById("inner_main").innerHTML=xmlhttp.responseText;
 						var text=xmlhttp.response;
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
-
-						set_TOC(abc);
-
 					}
 				}
 				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
 				xmlhttp.send();
 			});	
 			</script>			
-			   <script src="123/js/mini_js.js"></script>
-			   <script src="123/js/mini_js_2.js"></script>
 	</body>
 </html>
