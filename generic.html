@@ -40,7 +40,7 @@
 
 				<!-- Main -->
 					<article id="main">
-						<header>
+						<header id="header_title">
 							<h2>书中自有黄金屋，书中自有颜如玉</h2>
 							<p>少看书，少看书，少看那些没用的书≧▽≦</p>
 						</header>
@@ -78,13 +78,14 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 			$(function(){
-				var abc=document.getElementById("inner_main");
-
+				
 
 				var con=new showdown.Converter();
 				var xmlhttp=new XMLHttpRequest();
 				var docnum=document.cookie.split("name=")[1].split(";")[0];
 				document.title=docnum+"|Boringboys's blog";
+				document.getElementById("header_title").innerHTML="<h2>"+docnum+"</h2>"+
+																"<p>少看书，少看书，少看那些没用的书≧▽≦</p>";
 				// alert(docnum);
 				xmlhttp.onreadystatechange=function()
 				{
