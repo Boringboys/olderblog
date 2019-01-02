@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="123/css/mini_css.css">
+		<link rel="icon" href="images/favicon.png"/>
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Boringboys</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">首页</a></li>
+											<li><a href="generic.html">文章</a></li>
+											<li><a href="elements.html">更多内容</a></li>
+											<li><a href="https://github.com/Boringboys/Boringboys.github.io" title="star me on github"><span class="icon fa-github fa-2x"><span class="label">Github</span></span>star me on github</a></li>
+											<!-- <li><a href="#">Sign Up</a></li> -->
+											<!-- <li><a href="#">Log In</a></li> -->
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header id="header_title">
+							<h2>书中自有黄金屋，书中自有颜如玉</h2>
+							<p>少看书，少看书，少看那些没用的书≧▽≦</p>
+						</header>
+						<section class="wrapper style5" id="wrapper_main">
+							<div class="inner" id="inner_main">
+								<!-- 嵌入文章 -->
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="index.html" class="icon fa-home"><span class="label">Home</span></a></li>
+							<li><a href="https://github.com/Boringboys" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:w15005287135@163.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							copyright &copy; 2018-2019 <a href="https://github.com/Boringboys">Boringboys</a>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="showdown-1.8.7/dist/showdown.min.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+			$(function(){
+				
+
+				var con=new showdown.Converter();
+				var xmlhttp=new XMLHttpRequest();
+				var docnum=document.cookie.split("name=")[1].split(";")[0];
+				document.title=docnum+"|Boringboys's blog";
+				document.getElementById("header_title").innerHTML="<h2>"+docnum+"</h2>"+
+																"<p>少看书，少看书，少看那些没用的书≧▽≦</p>";
+				// alert(docnum);
+				xmlhttp.onreadystatechange=function()
+				{
+					if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+						// alert(xmlhttp.response);
+						// document.getElementById("inner_main").innerHTML=xmlhttp.responseText;
+						var text=xmlhttp.response;
+						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
+					}
+				}
+				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
+				xmlhttp.send();
+			});	
+			</script>			
+	</body>
+</html>
