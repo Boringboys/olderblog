@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>crypt</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<!-- 	<script src="kjur-jsrsasign-d282c71/jsrsasign-all-min.js"></script>
+ 		<script src="kjur-jsrsasign-d282c71/jsrsasign-rsa-min.js"></script>
+ -->
+	<script src="jsencrypt-3.0.0-rc.1/bin/jsencrypt.js"></script>
+	<script src="crypto-js-3.1.9-1/crypto-js.js"></script>
+
+
+	<script>
+
+		const key = CryptoJS.enc.Utf8.parse("1234123912ABCDEF");  //十六位十六进制数作为密钥
+    	const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412'); 
+
+    	var word = '["密码学课程设计","1990c9f5bb91acfbcd07d387396894768918e949cd5349b85a4475b50880b1ff38a30e3a8a5c9997a33b0dbbd6bdd3144de96141ca31ada3db5a5e1040a06bfc6659087c77c80d932c092db2da821cd26e636d2ead782150656d51349c0673c2266fa8e4e4ff357b2949a3e769f2c210abb811114da78a8bd6a54ba5509d1e59"]"'
+
+    	let srcs = CryptoJS.enc.Utf8.parse(word);
+        let encrypted = CryptoJS.AES.encrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+        var str = encrypted.ciphertext.toString().toUpperCase();
+        console.log(str);
+
+        let encryptedHexStr = CryptoJS.enc.Hex.parse(str);
+        let srcs2 = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+        let decrypt = CryptoJS.AES.decrypt(srcs2, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+        let decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
+        var str2 = decryptedStr.toString();
+        console.log(str2);
+
+
+// 		var signdata = "abc123";
+// 		var prikey = "-----BEGIN PUBLIC KEY-----\
+// 				MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDL/TPQzVzzEzMXQKwX/6O7h188\
+// 				ntigmTsUOE3UXGt4ShHUshw6oQ6DzSxJTpJjYvbCVrbx2WeMX5J5+BmP43TeYd1B\
+// 				t2sfZAfmAZJONqMDtRBG+R5k5HmGpzxqAo0lnI67yVpMCQMe6uunqWbrRQZNobwN\
+// 				qDnykJBOndZcVrdtzwIDAQAB\
+// 				-----END PUBLIC KEY-----";
+// 		var pubkey = "-----BEGIN RSA PRIVATE KEY-----\
+// MIICXAIBAAKBgQDL/TPQzVzzEzMXQKwX/6O7h188ntigmTsUOE3UXGt4ShHUshw6\
+// oQ6DzSxJTpJjYvbCVrbx2WeMX5J5+BmP43TeYd1Bt2sfZAfmAZJONqMDtRBG+R5k\
+// 5HmGpzxqAo0lnI67yVpMCQMe6uunqWbrRQZNobwNqDnykJBOndZcVrdtzwIDAQAB\
+// AoGAOb3PiABJmkjKAn/89sIXH8Me8zLnkPYu4fdaGI2coi0dRP6xvOrQCADw00NZ\
+// bqaZwML5ABaRGAwJk1rmKXOyJatbtkDYYI7AHOENt0UWpI5RLoJhf5uyFDZdTaBW\
+// OO647wMlhWx2kjCuoKa0ox4wuTQMTY1Zw+NXMUUBvIkiKWkCQQDojT6bMd2yxFgN\
+// 6hBlfBo43J8ZTfkG/xHwYDVvhf3Dnq7AnCMFvkDJhOoPBrlokx+7/ca6aIsRiAH9\
+// cgfoo1gdAkEA4I6usHBFVXVZaeZA14PRMrUrUse2vXsenHtNp01L2hI1hYpxywjw\
+// oevc11ba0HzY9n0+gIh0jKNN0wl9+Bux2wJAJTHCG6xkGx2QP9l5+eFZiFKxF6kC\
+// 9X2CbwHUShwSNGGC7ceLSnXdgt3BWdnnebReVQEH8fSamZk5SEIexbSqeQJAUqp0\
+// CKPsAj/HAMMwz6XJF3+2SS0YSrzOUhDaT2KXL9pQNa73oSTTYOhxThy9RM8RF/yX\
+// S73wGe3sMmpmIzYezQJBAK4bFUErRbT0Vjy2oCxZF0Ocl/t7e/vQWZxX1mrPy2/3\
+// hPGx5BKDtFuzluSCJfG2tL+2zZFr63Lvbl9sxmoIp0c=\
+// -----END RSA PRIVATE KEY-----";
+
+
+// initialize
+// var sig = new KJUR.crypto.Signature({"alg": "SHA1withRSA"});
+// // initialize for signature generation
+// sig.init(pubkey);   // rsaPrivateKey of RSAKey object
+// // update data
+// sig.updateString('aaa123');
+// // calculate signature
+// var sigValueHex = sig.sign();
+// console.log(sigValueHex);
+
+
+// // initialize
+// var sig1 = new KJUR.crypto.Signature({"alg": "SHA1withRSA"});
+// // initialize for signature validation
+// sig1.init(prikey); // signer's certificate
+// // update data
+// sig1.updateString('aa123');
+// // verify signature
+// var isValid = sig1.verify(sigValueHex);
+
+// console.log(isValid);
+
+// // var rsa = new RSAKey();
+// rsa = KEYUTIL.getKey(prikey);
+// var sig = new KJUR.crypto.Signature({"alg":"SHA256withRSA"});
+// sig.init(rsa);
+// sig.updateString(signdata);
+// var signeds = sig.sign();
+// console.log(signeds);
+
+// 		var encrypt = new JSEncrypt();
+// 		encrypt.setPublicKey("-----BEGIN PRIVATE KEY-----\
+// MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMv9M9DNXPMTMxdA\
+// rBf/o7uHXzye2KCZOxQ4TdRca3hKEdSyHDqhDoPNLElOkmNi9sJWtvHZZ4xfknn4\
+// GY/jdN5h3UG3ax9kB+YBkk42owO1EEb5HmTkeYanPGoCjSWcjrvJWkwJAx7q66ep\
+// ZutFBk2hvA2oOfKQkE6d1lxWt23PAgMBAAECgYA5vc+IAEmaSMoCf/z2whcfwx7z\
+// MueQ9i7h91oYjZyiLR1E/rG86tAIAPDTQ1luppnAwvkAFpEYDAmTWuYpc7Ilq1u2\
+// QNhgjsAc4Q23RRakjlEugmF/m7IUNl1NoFY47rjvAyWFbHaSMK6gprSjHjC5NAxN\
+// jVnD41cxRQG8iSIpaQJBAOiNPpsx3bLEWA3qEGV8GjjcnxlN+Qb/EfBgNW+F/cOe\
+// rsCcIwW+QMmE6g8GuWiTH7v9xrpoixGIAf1yB+ijWB0CQQDgjq6wcEVVdVlp5kDX\
+// g9EytStSx7a9ex6ce02nTUvaEjWFinHLCPCh69zXVtrQfNj2fT6AiHSMo03TCX34\
+// G7HbAkAlMcIbrGQbHZA/2Xn54VmIUrEXqQL1fYJvAdRKHBI0YYLtx4tKdd2C3cFZ\
+// 2ed5tF5VAQfx9JqZmTlIQh7FtKp5AkBSqnQIo+wCP8cAwzDPpckXf7ZJLRhKvM5S\
+// ENpPYpcv2lA1rvehJNNg6HFOHL1EzxEX/JdLvfAZ7ewyamYjNh7NAkEArhsVQStF\
+// tPRWPLagLFkXQ5yX+3t7+9BZnFfWas/Lb/eE8bHkEoO0W7OW5IIl8ba0v7bNkWvr\
+// cu9uX2zGaginRw==\
+// -----END PRIVATE KEY-----");
+// 		var data = encrypt.encrypt("abc123");
+// 		alert(data);
+
+// 		var decrypt = new JSEncrypt();
+//         decrypt.setPrivateKey("-----BEGIN PUBLIC KEY-----\
+// 								MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDL/TPQzVzzEzMXQKwX/6O7h188\
+// 								ntigmTsUOE3UXGt4ShHUshw6oQ6DzSxJTpJjYvbCVrbx2WeMX5J5+BmP43TeYd1B\
+// 								t2sfZAfmAZJONqMDtRBG+R5k5HmGpzxqAo0lnI67yVpMCQMe6uunqWbrRQZNobwN\
+// 								qDnykJBOndZcVrdtzwIDAQAB\
+// 								-----END PUBLIC KEY-----");
+//         var uncrypted = decrypt.decrypt(data);
+//         console.log(uncrypted);
+
+
+
+	</script>
+</body>
+</html>
