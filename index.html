@@ -236,7 +236,7 @@
 																				obj[i2].lastname+
 																				"</h2>"+
 																				"<p>"+obj[i2].abstract+"</p>"+
-																				"<p>最近更新："+year+"-"+month+"-"+day+"</p>"
+																				"<p>创建于："+year+"-"+month+"-"+day+"</p>"
 																				"</div>";
 								}
 
@@ -251,7 +251,7 @@
 					// console.log(name);
 					document.cookie="name="+name;
 					// alert(document.cookie);
-					window.location.href="generic.html";
+					window.location.href="generic.html?article="+name;
 				}
 			</script>
 
