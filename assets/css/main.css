@@ -3646,7 +3646,7 @@
 /* Main */
 
 	#main > header {
-		padding: 12em 0 10em 0 ;
+		padding: 6em 0 5em 0 ;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
@@ -3677,7 +3677,7 @@
 		@media screen and (max-width: 1680px) {
 
 			#main > header {
-				padding: 10em 0 8em 0 ;
+				padding: 5em 0 4em 0 ;
 			}
 
 		}
@@ -3685,7 +3685,7 @@
 		@media screen and (max-width: 1280px) {
 
 			#main > header {
-				padding: 8em 3em 6em 3em ;
+				padding: 4em 1.5em 3em 1.5em ;
 			}
 
 		}
@@ -3693,7 +3693,7 @@
 		@media screen and (max-width: 980px) {
 
 			#main > header {
-				padding: 10em 3em 8em 3em ;
+				padding: 5em 1.5em 4em 1.5em ;
 			}
 
 		}
@@ -3701,7 +3701,7 @@
 		@media screen and (max-width: 736px) {
 
 			#main > header {
-				padding: 5em 3em 3em 3em ;
+				padding: 2.5em 1.5em 1.5em 1.5em ;
 			}
 
 				#main > header h2 {
