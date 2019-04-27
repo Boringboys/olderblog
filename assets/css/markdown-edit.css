@@ -1,11 +1,11 @@
 #markdown{
     width: 100%;
     height: 300px;
-    padding: 10px;
+    padding: 5px;
 }
 #markdown-edit{
     border-radius: 5px;
-    width: 48%;
+    width: 49%;
     height: 100%;
     float: left;
     background-color: #eeeeee;
@@ -15,12 +15,12 @@
 }
 #markdown-show{
     border-radius: 5px;
-    width: 48%;
+    width: 49%;
     height: 100%;
     float: left;
     background-color: #ffffff;
     color: black;
-    margin-left:5px;
+    margin-left:10px;
     padding: 10px;
     overflow:auto;
 }
@@ -31,13 +31,83 @@
 #inner_main{
     width: 100%;
 }
+
+@media screen and (max-width: 1280px) {
+    #markdown-edit{
+        width: 48%;
+        margin-left: 20px;
+    }
+    #markdown-show{
+        width: 48%;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    #markdown-edit{
+        width: 48%;
+        margin-left: 10px;
+    }
+    #markdown-show{
+        width: 48%;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #markdown{
+        padding: 5px 0px 5px 0px;
+    }
+    #markdown-edit{
+        width: 48%;
+        margin-left: 7px;
+    }
+    #markdown-show{
+        width: 48%;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #markdown-edit{
+        width: 47%;
+        margin-left: 10px;
+    }
+    #markdown-show{
+        width: 47%;
+        margin-left: 5px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     #markdown-edit{
-        width: 50%;
+        width: 48%;
+        margin-left: 5px;
+    }
+    #markdown-show{
+        width: 48%;
+        margin-left: 3px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #markdown-edit{
+        width: 47%;
+        margin-left: 5px;
+    }
+    #markdown-show{
+        width: 47%;
+        margin-left: 6px;
+    }
+}
+
+@media screen and (max-width: 185px) {
+    #markdown-edit{
+        width: 49%;
         margin-left: 0px;
     }
     #markdown-show{
-        width: 50%;
-        margin-left: 0px;
+        width: 49%;
+        margin-left: 1px;
     }
 }
