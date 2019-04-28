@@ -2,15 +2,29 @@
 
 <html>
 	<head>
-		<title>blog</title>
+		<title>blog|Boringboys</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" href="images/favicon.png"/>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
+		
+		<meta name="author" content="Boringboys" />
+		<meta name="description" content="Boringboys的博客,分享一些学习笔记和个人教程" />
+		
+		<!--twitter-->
+		<meta name="twitter:title"   content="blog|Boringboys" />
+		<meta name="twitter:description"   content="Boringboys的博客,分享一些学习笔记和个人教程" />
+		<meta name="twitter:image" content="https://www.boringboys.top/images/favicon.png" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:url"  content="https://www.boringboys.top/generic" />
+
+		<!--facebook-->
+		<meta property="og:image" content="https://www.boringboys.top/images/favicon.png" />     
+		<meta property="og:type"   content="blog" />
+		<meta property="og:url"   content="https://www.boringboys.top/generic" />
+		<meta property="og:description" content="Boringboys的博客,分享一些学习笔记和个人教程" />
+		<meta property="og:title" content="blog|Boringboys" />
+
 	<body>
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
@@ -120,7 +134,7 @@
 				xmlhttp.onreadystatechange=function()
 				{
 					if(xmlhttp.status==404){
-						document.title="404|Boringboys's blog";
+						document.title="404|Boringboys";
 						document.getElementById("header_title").innerHTML="<h2>article_404</h2>"+
 																"<p>你要看的文章昨天晚上飞走了，先看看别的吧</p>";
 						document.getElementById('inner_main').innerHTML=article_404;
@@ -128,7 +142,7 @@
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
 						document.cookie="name="+docnum;
-						document.title=docnum+"|Boringboys's blog";
+						document.title=docnum+"|Boringboys";
 						document.getElementById("header_title").innerHTML="<h2>"+docnum+"</h2>"+
 																"<p>少看书，少看书，少看那些没用的书≧▽≦</p>";
 						var text=xmlhttp.response;

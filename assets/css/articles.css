@@ -1,0 +1,23 @@
+.card{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align: center;
+}
+.cardheader{
+    /*color can use
+    #ed4933
+    #8a2be2
+    #3f4172
+    #81771c
+    #208580
+    */
+    background-color: #ed4933;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    font-size: 90%;
+}
+.cardbody{
+    padding: 15px;
+    text-align: right;
+}
