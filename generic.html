@@ -6,7 +6,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 		<link rel="icon" href="images/favicon.png"/>
 		
 		<meta name="author" content="Boringboys" />
@@ -65,7 +64,6 @@
 							<div class="inner" id="inner_main">
 								<!-- 嵌入文章 -->
 							</div>
-							<div id="gitalk-container"></div>
 						</section>
 					</article>
 
@@ -157,21 +155,5 @@
 			});	
 			</script>
 			
-			
-			<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js"></script>
-			<script>
-				var gitalk = new Gitalk({
-					clientID: '65b7328e8e5b12f43fea',
-					clientSecret: '5d91c23b1b5cec0e3f57259637d84c4fbe00167e',
-					repo: 'Boringboys.github.io',
-					owner: 'Boringboys',
-					admin: ['Boringboys'],
-					id: md5(location.pathname),      // Ensure uniqueness and length less than 50
-					distractionFreeMode: false  // Facebook-like distraction free mode
-				})
-				
-				gitalk.render('gitalk-container')
-			</script>
 	</body>
 </html>
