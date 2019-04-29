@@ -26,7 +26,51 @@
 		<meta property="og:description" content="Boringboys的博客,分享一些学习笔记和个人教程" />
 		<meta property="og:title" content="blog|Boringboys" />
 
+		<style>
+			#share-area{
+				width: 100%;
+				background-color: aliceblue;
+				text-align: center;
+				padding: 15px;
+			}
+			#share-btn{
+				color:#1d242a;
+			}
+			#share-icons{
+				display: none;
+				width: 100%;
+			}
+			#share-li{
+				float: left;
+				width: 3%;
+				margin-left: 14.1%;
+			}
+			@media screen and (max-width: 1000px) {
+				#share-li{
+					float: left;
+					width: 4%;
+					margin-left: 13.3%;
+				}
+			}
+			@media screen and (max-width: 700px) {
+				#share-li{
+					float: left;
+					width: 5%;
+					margin-left: 12.5%;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				#share-li{
+					float: left;
+					width: 7%;
+					margin-left: 10.8%;
+				}
+			}
+		</style>
+	</head>
+
 	<body>
+	
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -65,6 +109,18 @@
 								<!-- 嵌入文章 -->
 							</div>
 						</section>
+						<!--分享按钮-->
+						<section id="share-area">
+							<i class="icon fa-share-alt fa-2x" id="share-btn"></i>
+							<ul id="share-icons">
+								<i id="share-li"><img src="images/share_icon/qq.png" width="100%"></i>
+								<i id="share-li"><img src="images/share_icon/qzone.png" width="100%"></i>
+								<i id="share-li"><img src="images/share_icon/weibo.png" width="100%"></i>
+								<i id="share-li"><img src="images/share_icon/facebook.png" width="100%"></i>
+								<i id="share-li"><img src="images/share_icon/twitter.png" width="100%"></i>
+							</ul>
+						</section>
+						
 					</article>
 
 				<!-- Footer -->
@@ -99,60 +155,19 @@
 			<script src="showdown-1.8.7/dist/showdown.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/generic-loadarticle.js"></script>
 			<script>
-			$(function(){
-				
-				var article_404 ="<P>虽然说十分的抱歉，但是你的请求只引来了一个奇怪的家伙-_-|</p>"+
-				"<img src='https://raw.githubusercontent.com/Boringboys/resources/master/img/404.jpg' width='95%'>";
-				
-				function getPar(par){
-					var local_url = document.location.href; 
-					var get = local_url.indexOf(par +"=");
-					if(get == -1){
-						return false;   
-					}   
-					var get_par = local_url.slice(par.length + get + 1);    
-					var nextPar = get_par.indexOf("&");
-					if(nextPar != -1){
-						get_par = get_par.slice(0, nextPar);
-					}
-					return get_par;
-				}
-				
-				var txt = getPar("article");
-				var docnum = decodeURI(txt);
-				console.log(docnum);
+				$(function(){
+					$("#share-btn").click(function(){
+						$("#share-btn").hide();
+						$("#share-icons").show();
+					});
 
-				var con=new showdown.Converter();
-				var xmlhttp=new XMLHttpRequest();
-				
-			
-				if(docnum=='false'||docnum==''){
-					docnum=document.cookie.split("name=")[1].split(";")[0];
-				}
-				
-				// alert(docnum);
-				xmlhttp.onreadystatechange=function()
-				{
-					if(xmlhttp.status==404){
-						document.title="404|Boringboys";
-						document.getElementById("header_title").innerHTML="<h2>article_404</h2>"+
-																"<p>你要看的文章昨天晚上飞走了，先看看别的吧</p>";
-						document.getElementById('inner_main').innerHTML=article_404;
-					}
-					if (xmlhttp.readyState==4 && xmlhttp.status==200)
-					{
-						document.cookie="name="+docnum;
-						document.title=docnum+"|Boringboys";
-						document.getElementById("header_title").innerHTML="<h2>"+docnum+"</h2>"+
-																"<p>少看书，少看书，少看那些没用的书≧▽≦</p>";
-						var text=xmlhttp.response;
-						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
-					}
-				}
-				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
-				xmlhttp.send();
-			});	
+					$("#share-icons").mouseleave(function(){
+						$("#share-icons").hide();
+						$("#share-btn").show();
+					});
+				})
 			</script>
 			
 	</body>
