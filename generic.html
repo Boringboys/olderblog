@@ -113,11 +113,11 @@
 						<section id="share-area">
 							<i class="icon fa-share-alt fa-2x" id="share-btn"></i>
 							<ul id="share-icons">
-								<i id="share-li"><img src="images/share_icon/qq.png" width="100%"></i>
-								<i id="share-li"><img src="images/share_icon/qzone.png" width="100%"></i>
-								<i id="share-li"><img src="images/share_icon/weibo.png" width="100%"></i>
-								<i id="share-li"><img src="images/share_icon/facebook.png" width="100%"></i>
-								<i id="share-li"><img src="images/share_icon/twitter.png" width="100%"></i>
+								<i id="share-li"><img src="images/share_icon/qq.png" data-shareto="qq" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="images/share_icon/qzone.png" data-shareto="qzone" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="images/share_icon/weibo.png" data-shareto="weibo" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="images/share_icon/facebook.png" data-shareto="facebook" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="images/share_icon/twitter.png" data-shareto="twitter" width="100%" onclick="goshare(this)"></i>
 							</ul>
 						</section>
 						
@@ -156,26 +156,6 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/generic-loadarticle.js"></script>
-			<script>
-				$(function(){
-					$("#share-btn").click(function(){
-						$("#share-btn").hide();
-						$("#share-icons").show();
-					});
-
-					$("#share-area").mouseleave(function(){
-						$("#share-icons").hide();
-						$("#share-btn").show();
-					});
-					//点击该区域以外同样触发事件，为优化触屏设备情况
-					$("body").bind("click",function(e){
-						if($(e.target).closest("#share-area").length==0){
-							$("#share-icons").hide();
-							$("#share-btn").show();
-						}
-					})
-				})
-			</script>
 			
 	</body>
 </html>

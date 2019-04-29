@@ -18,7 +18,7 @@ $(function(){
 				}
 				
 				var txt = getPar("article");
-				var docnum = decodeURI(txt);
+				docnum = decodeURI(txt);
 				console.log(docnum);
 
 				var con=new showdown.Converter();
@@ -50,4 +50,54 @@ $(function(){
 				}
 				xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/"+docnum+".md","true");
 				xmlhttp.send();
-			});	
+
+				//点击分享按钮
+				$("#share-btn").click(function(){
+					$("#share-btn").hide();
+					$("#share-icons").show();
+				});
+				//鼠标离开分享控件区域
+				$("#share-area").mouseleave(function(){
+					$("#share-icons").hide();
+					$("#share-btn").show();
+				});
+				//点击该区域以外同样触发事件，为优化触屏设备情况
+				$("body").bind("click",function(e){
+					if($(e.target).closest("#share-area").length==0){
+						$("#share-icons").hide();
+						$("#share-btn").show();
+					}
+				})
+		});	
+
+		function goshare(id){
+			var mytitle = docnum;
+			var myurl = window.location.href;
+			var mysummary = document.getElementsByTagName('meta')['description'].content;
+			var mypic = document.getElementsByTagName('meta')['twitter:image'].content;
+			console.log(mytitle,myurl,mysummary,mypic);
+
+			var shareto = id.getAttribute("data-shareto");
+			switch (shareto){
+			case "weibo":
+				window.open("https://service.weibo.com/share/share.php?url="+myurl+"&sharesource=weibo&title="+mytitle+"&pic="+mypic,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+				console.log(1);
+				break;
+			case "qq":
+			window.open("https://connect.qq.com/widget/shareqq/index.html?title="+mytitle+"&url="+myurl+"&pics="+mypic+"&summary="+mysummary,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+				console.log(2);
+				break;
+			case "qzone":
+				window.open("https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+myurl+"&title="+mytitle+"&desc=我发现了一篇不错的博客，快来看看&summary="+mysummary+"&pics="+mypic,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+				console.log(3);
+				break;
+			case "facebook":
+			window.open("https://www.facebook.com/share.php?u="+myurl,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+				console.log(4);
+				break;
+			case "twitter":
+			window.open("https://twitter.com/intent/tweet?text=推荐一篇不错的博客&url="+myurl,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+				console.log(5);
+				break;
+			}
+		}
