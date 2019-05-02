@@ -84,7 +84,7 @@ $(function(){
 				console.log(1);
 				break;
 			case "qq":
-			window.open("https://connect.qq.com/widget/shareqq/index.html?title="+mytitle+"&url="+myurl+"&pics="+mypic+"&summary="+mysummary,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+			window.open("https://connect.qq.com/widget/shareqq/index.html?url="+myurl+"&showcount=1&desc=&summary="+mysummary+"&title="+mytitle+"&site=&pics="+mypic+"&style=203&width=98&height=22&otype=share","_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
 				console.log(2);
 				break;
 			case "qzone":
