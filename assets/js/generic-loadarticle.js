@@ -1,14 +1,20 @@
 $(function(){
 				
-				var article_404 ="<P>虽然说十分的抱歉，但是你的请求只引来了一个奇怪的家伙-_-|</p>"+
+				var article_404 ="<P>你最近好像没有看过这里的文章-_-|</p>"+
+				"去我的<a href=\"articles.html\">小抽屉</a>看看吧"+
 				"<img src='https://www.boringboys.top/images/img/404/404.jpg' width='95%'>";
 				
 				var con=new showdown.Converter();
 				var xmlhttp=new XMLHttpRequest();
 				
-				docnum=document.cookie.split("name=")[1].split(";")[0];
-
-				if(docnum){
+				if(document.cookie.indexOf("name=")==-1)
+				{
+					document.title="404|Boringboys";
+					document.getElementById("header_title").innerHTML="<h2>article_404</h2>"+
+															"<p>你要看的文章昨天晚上飞走了，先看看别的吧</p>";
+					document.getElementById('inner_main').innerHTML=article_404;
+				}else{
+					docnum=document.cookie.split("name=")[1].split(";")[0];
 					xmlhttp.onreadystatechange=function()
 					{
 						if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -23,10 +29,5 @@ $(function(){
 					}
 					xmlhttp.open("GET","https://www.boringboys.top/markdown/"+docnum+".md","true");
 					xmlhttp.send();
-				}else{
-					document.title="404|Boringboys";
-					document.getElementById("header_title").innerHTML="<h2>article_404</h2>"+
-															"<p>你要看的文章昨天晚上飞走了，先看看别的吧</p>";
-					document.getElementById('inner_main').innerHTML=article_404;
 				}
 			})
