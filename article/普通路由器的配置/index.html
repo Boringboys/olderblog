@@ -123,7 +123,7 @@
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
-						document.cookie="name=普通路由器的配置";
+						document.cookie="name="+"普通路由器的配置";
 						var text=xmlhttp.response;
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
 					}
