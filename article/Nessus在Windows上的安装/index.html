@@ -123,7 +123,8 @@
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
-						document.cookie="name="+"Nessus在Windows上的安装";
+						var name = "Nessus在Windows上的安装";
+						document.cookie="name="+name;
 						var text=xmlhttp.response;
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
 					}
