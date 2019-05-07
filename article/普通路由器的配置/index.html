@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/share_style.css" />
 		<link rel="icon" href="../../images/favicon.png"/>
 		
 		<meta name="author" content="Boringboys" />
@@ -25,48 +26,6 @@
 		<meta property="og:url"   content="https://www.boringboys.top/article/普通路由器的配置" />
 		<meta property="og:description" content="Boringboys的博客,分享一些学习笔记和个人教程" />
 		<meta property="og:title" content="普通路由器的配置|Boringboys's blog" />
-
-		<style>
-			#share-area{
-				width: 100%;
-				background-color: aliceblue;
-				text-align: center;
-				padding: 15px;
-			}
-			#share-btn{
-				color:#1d242a;
-			}
-			#share-icons{
-				display: none;
-				width: 100%;
-			}
-			#share-li{
-				float: left;
-				width: 3%;
-				margin-left: 14.1%;
-			}
-			@media screen and (max-width: 1000px) {
-				#share-li{
-					float: left;
-					width: 4%;
-					margin-left: 13.3%;
-				}
-			}
-			@media screen and (max-width: 700px) {
-				#share-li{
-					float: left;
-					width: 5%;
-					margin-left: 12.5%;
-				}
-			}
-			@media screen and (max-width: 500px) {
-				#share-li{
-					float: left;
-					width: 7%;
-					margin-left: 10.8%;
-				}
-			}
-		</style>
 	</head>
 
 	<body>
@@ -83,11 +42,11 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">首页</a></li>
-											<li><a href="generic.html">最近阅读</a></li>
-											<li><a href="articles.html">全部文章</a></li>
-											<li><a href="friendlink.html">友情链接</a></li>
-											<li><a href="markdown.html">Markdown</a></li>
+											<li><a href="../../index.html">首页</a></li>
+											<li><a href="../../generic.html">最近阅读</a></li>
+											<li><a href="../../articles.html">全部文章</a></li>
+											<li><a href="../../friendlink.html">友情链接</a></li>
+											<li><a href="../../markdown.html">Markdown</a></li>
 											<li><a href="https://github.com/Boringboys/Boringboys.github.io" title="star me on github"><span class="icon fa-github fa-2x"><span class="label">Github</span></span>star me on github</a></li>
 											<!-- <li><a href="#">Sign Up</a></li> -->
 											<!-- <li><a href="#">Log In</a></li> -->
@@ -113,11 +72,11 @@
 						<section id="share-area">
 							<i class="icon fa-share-alt fa-2x" id="share-btn"></i>
 							<ul id="share-icons">
-								<i id="share-li"><img src="images/share_icon/qq.png" data-shareto="qq" width="100%" onclick="goshare(this)"></i>
-								<i id="share-li"><img src="images/share_icon/qzone.png" data-shareto="qzone" width="100%" onclick="goshare(this)"></i>
-								<i id="share-li"><img src="images/share_icon/weibo.png" data-shareto="weibo" width="100%" onclick="goshare(this)"></i>
-								<i id="share-li"><img src="images/share_icon/facebook.png" data-shareto="facebook" width="100%" onclick="goshare(this)"></i>
-								<i id="share-li"><img src="images/share_icon/twitter.png" data-shareto="twitter" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="../../images/share_icon/qq.png" data-shareto="qq" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="../../images/share_icon/qzone.png" data-shareto="qzone" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="../../images/share_icon/weibo.png" data-shareto="weibo" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="../../images/share_icon/facebook.png" data-shareto="facebook" width="100%" onclick="goshare(this)"></i>
+								<i id="share-li"><img src="../../images/share_icon/twitter.png" data-shareto="twitter" width="100%" onclick="goshare(this)"></i>
 							</ul>
 						</section>
 						
@@ -171,6 +130,57 @@
 				}
 				xmlhttp.open("GET","https://www.boringboys.top/markdown/普通路由器的配置.md","true");
 				xmlhttp.send();
+
+				
+				//点击分享按钮
+				$("#share-btn").click(function(){
+					$("#share-btn").hide();
+					$("#share-icons").show();
+				});
+				//鼠标离开分享控件区域
+				$("#share-area").mouseleave(function(){
+					$("#share-icons").hide();
+					$("#share-btn").show();
+				});
+				//点击该区域以外同样触发事件，为优化触屏设备情况
+				$("body").bind("click",function(e){
+					if($(e.target).closest("#share-area").length==0){
+						$("#share-icons").hide();
+						$("#share-btn").show();
+					}
+				})
+
+				function goshare(id){
+					var mytitle = docnum;
+					var myurl = window.location.href;
+					var mysummary = document.getElementsByTagName('meta')['description'].content;
+					var mypic = document.getElementsByTagName('meta')['twitter:image'].content;
+					console.log(mytitle,myurl,mysummary,mypic);
+
+					var shareto = id.getAttribute("data-shareto");
+					switch (shareto){
+					case "weibo":
+						window.open("https://service.weibo.com/share/share.php?url="+myurl+"&sharesource=weibo&title="+mytitle+"&pic="+mypic,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+						console.log(1);
+						break;
+					case "qq":
+					window.open("https://connect.qq.com/widget/shareqq/index.html?url="+myurl+"&showcount=1&desc=&summary="+mysummary+"&title="+mytitle+"&site=&pics="+mypic+"&style=203&width=98&height=22&otype=share","_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+						console.log(2);
+						break;
+					case "qzone":
+						window.open("https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+myurl+"&title="+mytitle+"&desc=我发现了一篇不错的博客，快来看看&summary="+mysummary+"&pics="+mypic,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+						console.log(3);
+						break;
+					case "facebook":
+					window.open("https://www.facebook.com/share.php?u="+myurl,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+						console.log(4);
+						break;
+					case "twitter":
+					window.open("https://twitter.com/intent/tweet?text=推荐一篇不错的博客&url="+myurl,"_blank","scrollbars=yes,resizable=no,width=700,height=600,left=300,top=100");
+						console.log(5);
+						break;
+					}
+				}
             </script>
 			
 	</body>
