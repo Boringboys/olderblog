@@ -36,10 +36,11 @@ $(function(){
                     
                     var color_index = i2%7;
 
-                    insert_html+="<div class=\"card\" onclick=\"goblog(this)\" data-name=\""+obj[i2].firstname+obj[i2].lastname+"\">"+
+                    insert_html+="<div class=\"card\">"+
                                     "<div class=\"cardheader\" style=\"background-color:"+card_color[color_index]+"\">"+
                                             "<h2>"+obj[i2].firstname+"<br/>"+obj[i2].lastname+"</h2>"+
                                             "<p>"+obj[i2].abstract+"</p>"+
+                                            "<a href=article/"+obj[i2].firstname+obj[i2].lastname+">阅读全文→</a>"+
                                         "</div>"+
                                         "<div class=\"cardbody\">"+
                                             year+"-"+month+"-"+day+
@@ -47,19 +48,9 @@ $(function(){
                                     "</div>"+
                                     "<hr/>"
                 }
-
                 document.getElementById("inner_html").innerHTML=insert_html;
             }
         }
-        xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/articles.json","true");
+        xmlhttp.open("GET","https://www.boringboys.top/markdown/articles.json","true");
         xmlhttp.send();
 })
-
-function goblog(id)
-{
-    var name=id.getAttribute("data-name");
-    // console.log(name);
-    document.cookie="name="+name;
-    // alert(document.cookie);
-    window.location.href="generic.html?article="+name;
-}
