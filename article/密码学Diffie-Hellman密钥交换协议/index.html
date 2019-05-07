@@ -123,7 +123,7 @@
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
-						document.cookie="name=密码学Diffie-Hellman密钥交换协议";
+						document.cookie="name="+"密码学Diffie-Hellman密钥交换协议";
 						var text=xmlhttp.response;
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
 					}
