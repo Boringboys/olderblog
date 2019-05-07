@@ -36,7 +36,7 @@ $(function(){
 
 							}
 						}
-						xmlhttp.open("GET","https://raw.githubusercontent.com/Boringboys/resources/master/markdown/articles.json","true");
+						xmlhttp.open("GET","https://www.boringboys.top/markdown/articles.json","true");
 						xmlhttp.send();
 				})
 				function goblog(id)
@@ -45,5 +45,5 @@ $(function(){
 					// console.log(name);
 					document.cookie="name="+name;
 					// alert(document.cookie);
-					window.location.href="generic.html?article="+name;
+					window.location.href="article/"+name;
 				}
