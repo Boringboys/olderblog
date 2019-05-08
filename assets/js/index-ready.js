@@ -39,6 +39,7 @@ $(function(){
 						xmlhttp.open("GET","https://www.boringboys.top/markdown/articles.json","true");
 						xmlhttp.send();
 				})
+				
 				function goblog(id)
 				{
 					var name=id.getAttribute("data-name");

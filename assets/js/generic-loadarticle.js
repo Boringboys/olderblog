@@ -9,7 +9,6 @@ $(function(){
 				
 				if(document.cookie.indexOf("name=")==-1)
 				{
-					document.title="404|Boringboys";
 					document.getElementById("header_title").innerHTML="<h2>article_404</h2>"+
 															"<p>你要看的文章昨天晚上飞走了，先看看别的吧</p>";
 					document.getElementById('inner_main').innerHTML=article_404;
@@ -20,7 +19,6 @@ $(function(){
 						if (xmlhttp.readyState==4 && xmlhttp.status==200)
 						{
 							document.cookie="name="+docnum;
-							document.title=docnum+"|Boringboys";
 							document.getElementById("header_title").innerHTML="<h2>"+docnum+"</h2>"+
 																	"<p>少看书，少看书，少看那些没用的书≧▽≦</p>";
 							var text=xmlhttp.response;

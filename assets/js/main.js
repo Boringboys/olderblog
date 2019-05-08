@@ -101,3 +101,17 @@
 	
 
 })(jQuery);
+
+var mytitle = document.title;
+console.log(document.title);
+
+document.addEventListener("visibilitychange",function(){
+	console.log(document.visibilityState);
+	if(document.visibilityState=="hidden"){
+		document.title="蹲在角落>_<";
+	}
+	if(document.visibilityState=="visible"){
+		document.title=mytitle;
+	}
+},false);
+
