@@ -139,10 +139,10 @@
 					$("#share-icons").show();
 				});
 				//鼠标离开分享控件区域
-				$("#share-area").mouseleave(function(){
-					$("#share-icons").hide();
-					$("#share-btn").show();
-				});
+				// $("#share-area").mouseleave(function(){
+				// 	$("#share-icons").hide();
+				// 	$("#share-btn").show();
+				// });
 				//点击该区域以外同样触发事件，为优化触屏设备情况
 				$("body").bind("click",function(e){
 					if($(e.target).closest("#share-area").length==0){
