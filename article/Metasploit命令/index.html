@@ -123,8 +123,8 @@
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
-						var name = "Metasploit命令";
-						document.cookie="name="+name;
+						document.cookie="name=Metasploit命令;Path=/";
+
 						var text=xmlhttp.response;
 						document.getElementById('inner_main').innerHTML=con.makeHtml(text);
 					}
