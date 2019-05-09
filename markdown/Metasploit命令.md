@@ -180,5 +180,5 @@ Framework: 5.0.16-dev-a5184d39dc6a3a8cf2b85538327b57706057e94c
 Console  : 5.0.16-dev-a5184d39dc6a3a8cf2b85538327b57706057e94c
 
 >作者：Boringboys  
->原文链接：https://www.boringboys.top/generic.html?article=Metasploit命令  
+>原文链接：https://www.boringboys.top/article/Metasploit命令/  
 >版权声明：本文采用[BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)协议授权，转载请遵守此协议
