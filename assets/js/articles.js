@@ -1,7 +1,7 @@
 $(function(){
                 
 
-    var card_color = ["#FFCCCC","#009966","#CCCC99","#CCCCCC","#99CCFF","#6699CC","#FF33CC"];
+    var card_color = ["#929292","#009966","#CCCC99","#CCCCCC","#99CCFF","#6699CC","#FF33CC"];
    
     console.log(card_color.length);
     console.log(card_color);
@@ -37,7 +37,7 @@ $(function(){
                     var color_index = i2%7;
 
                     insert_html+="<div class=\"card\">"+
-                                    "<div class=\"cardheader\" style=\"background-color:"+card_color[color_index]+"\">"+
+                                    "<div class=\"cardheader\" style=\"background-color:"+card_color[0]+"\">"+
                                             "<h2>"+obj[i2].firstname+"<br/>"+obj[i2].lastname+"</h2>"+
                                             "<p>"+obj[i2].abstract+"</p>"+
                                             "<a href=article/"+obj[i2].firstname+obj[i2].lastname+">阅读全文→</a>"+
