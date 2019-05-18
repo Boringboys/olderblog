@@ -69,5 +69,5 @@ Alice 计算得 `A=4` ，Bob 计算得 `B=5` ，Eve 计算得 `A'=13,B'=12`
 这样一来，Eve 就可以分别与 Alice 和 Bob 通信，而 Alice 和 Bob 仍认为和自己通信的是对方，对第三方并不知情。
 
 >作者：Boringboys  
->原文链接：https://www.boringboys.top/generic.html?article=密码学Diffie-Hellman密钥交换协议  
+>原文链接：https://www.boringboys.top/article/密码学Diffie-Hellman密钥交换协议  
 >版权声明：本文采用[BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)协议授权，转载请遵守此协议
