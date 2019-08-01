@@ -1,8 +1,0 @@
-+--------+---------+----------+----------+
-| Number | Service | Username | Password |
-+--------+---------+----------+----------+
-|   6    |  nginx  |  admin   |  admin   |
-|   9    |  Jboss  |  admin   |  admin   |
-|   10   |  Jboss  |  admin   |  admin   |
-|   11   |  Jboss  |  admin   |  admin   |
-+--------+---------+----------+----------+
