@@ -25,7 +25,7 @@ $(function(){
 									month=month/100000000;
 									year=year/10000000000;
 									
-									document.getElementById("md"+(i+1)).innerHTML="<div data-name="+obj[i2].firstname+obj[i2].lastname+" onclick=\"goblog(this)\">"+
+									document.getElementById("md"+(i+1)).innerHTML="<div data-name="+obj[i2].firstname+obj[i2].lastname+" style=\"cursor:pointer\" onclick=\"goblog(this)\">"+
 																				"<h2>"+obj[i2].firstname+"<br/>"+
 																				obj[i2].lastname+
 																				"</h2>"+
