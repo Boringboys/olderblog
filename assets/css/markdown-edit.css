@@ -36,6 +36,12 @@
 #makedown-save-btn{
 	margin-top:10px;
 }
+#makedown-open-btn{
+	margin-top:10px;
+}
+#makedown-clean-btn{
+	margin-top:10px;
+}
 #wrapper_main{
     width: 100%;
     padding: 0;
