@@ -6,7 +6,7 @@
 #markdown-edit{
     border-radius: 5px;
     width: 49%;
-    height: 100%;
+    height: 90%;
     float: left;
     background-color: #eeeeee;
     resize: none;
@@ -16,13 +16,25 @@
 #markdown-show{
     border-radius: 5px;
     width: 49%;
-    height: 100%;
+    height: 90%;
     float: left;
     background-color: #ffffff;
     color: black;
     margin-left:10px;
     padding: 10px;
     overflow:auto;
+}
+#makedown-menu{
+	border-radius: 5px;
+    width: 30%;
+    height: 90%;
+    background-color: #eeeeee;
+    resize: none;
+    color: black;
+    margin-left:10px;
+}
+#makedown-save-btn{
+	margin-top:10px;
 }
 #wrapper_main{
     width: 100%;
