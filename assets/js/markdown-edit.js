@@ -1,6 +1,6 @@
 $(function(){
                 var markdown_height = window.innerHeight-document.getElementById('header').offsetHeight;
-                document.getElementById('markdown').style.height=markdown_height+"px";
+                document.getElementById('markdown').style.height=markdown_height-50+"px";
 
                 var con=new showdown.Converter();
                 var text=$('#markdown-edit').val();
@@ -9,7 +9,7 @@ $(function(){
 
             window.onresize=function(){
                 var markdown_height = window.innerHeight-document.getElementById('header').offsetHeight;
-                document.getElementById('markdown').style.height=markdown_height+"px";
+                document.getElementById('markdown').style.height=markdown_height-50+"px";
             }
 
             function textchange(){
