@@ -25,36 +25,20 @@
     overflow:auto;
 }
 #makedown-menu{
-	border-radius: 5px;
     width: 98%;
-    height: 50px;
+    height: 45px;
     background-color: #eeeeee;
     resize: none;
     color: black;
     margin-left:15px;
-	padding:10px;
 	white-space:nowrap;
 }
-#makedown-open-btn{
+#makedown-open-btn{    /*自定义按钮*/
 	
 	background-color: #454545;
     border: none;
     color: white;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-	
-	float: left;
-	margin-top:10px;
-}
-#makedown-save-btn{
-	
-	background-color: #454545;
-    border: none;
-    color: white;
-    padding: 5px 5px;
+    padding: 1px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -63,19 +47,33 @@
 	float: left;
 	margin:10px;
 }
-#makedown-clean-btn{
+#makedown-save-btn{    /*自定义按钮*/
 	
 	background-color: #454545;
     border: none;
     color: white;
-    padding: 5px 5px;
+    padding: 1px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
 	
 	float: left;
-	margin-top:10px;
+	margin:10px;
+}
+#makedown-clean-btn{    /*自定义按钮*/
+	
+	background-color: #454545;
+    border: none;
+    color: white;
+    padding: 1px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	
+	float: left;
+	margin:10px;
 }
 #wrapper_main{
     width: 100%;
