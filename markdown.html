@@ -68,9 +68,10 @@
                             </div>
                         </section>
 						<div id="makedown-menu">
-							<button id="makedown-open-btn">打开</button>
-							<button id="makedown-save-btn">另存为...</button>
-							<button id="makedown-clean-btn">清空</button>
+							<input type="file" id="fileselect" hidden=true onchange="fileimport()">
+							<button id="makedown-open-btn" onclick="openbtnonclicked()">打开</button>
+							<button id="makedown-save-btn" onclick="savebtnonclicked()">另存为...</button>
+							<button id="makedown-clean-btn" onclick="cleanbtnonclicked()">清空</button>
 						</div>
 					</article>
 
