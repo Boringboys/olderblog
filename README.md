@@ -1,2 +1,2 @@
-# Boringboys.github.io
+# ~~Boringboys.github.io
 Boringboys's blog  
