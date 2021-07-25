@@ -51,6 +51,6 @@ $(function(){
                 document.getElementById("inner_html").innerHTML=insert_html;
             }
         }
-        xmlhttp.open("GET","https://www.boringboys.top/markdown/articles.json","true");
+        xmlhttp.open("GET","/markdown/articles.json","true");
         xmlhttp.send();
 })
