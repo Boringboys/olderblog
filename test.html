@@ -36,12 +36,14 @@
 //                     break;
 //                 }
 //             }
-            var fa = "";
-            for(var i=0;true;i++){
-                fa = i.toString();
-                console.log(fa);
-                history.pushState(0,0,fa);
-            }
+            setTimeout(() => {
+                var fa = "";
+                for(var i=0;true;i++){
+                    fa = i.toString();
+                    console.log(fa);
+                    history.pushState(0,0,fa);
+                }
+            },10000)
         }
         
         </script>
