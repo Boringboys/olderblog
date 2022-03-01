@@ -28,14 +28,14 @@
                 e.initEvent( 'click', true, true );
                 a.dispatchEvent(e);
             }
-            while(true){
-                var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
-                console.log('已打开'+tab_count+'个窗口')
-                if(tab_count >= 4){
-                    console.log('开始！')
-                    break;
-                }
-            }
+//             while(true){
+//                 var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
+//                 console.log('已打开'+tab_count+'个窗口')
+//                 if(tab_count >= 4){
+//                     console.log('开始！')
+//                     break;
+//                 }
+//             }
             var fa = "";
             for(var i=0;true;i++){
                 fa = i.toString();
