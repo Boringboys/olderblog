@@ -5,14 +5,15 @@
         <meta charset="utf-8">
     </head>
     <body>
+        <a id='link' href='./test.html' target='_blank'>下一层</a>
         <img src="images/img/404/404.jpg">
-        <a id='link' href='./test.html' target='_blank'>yoyo</a>
 
         <script>
         onload = function(){ 
             var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
             tab_count = tab_count || 0;
             tab_count++;
+            document.title = '页面' + tab_count;
             document.cookie = 'c=' + tab_count;
             console.log('当前是第'+tab_count+'个窗口')
             if(tab_count < 10) {
