@@ -10,7 +10,7 @@
 
         <script>
         onload = function(){ 
-            var tab_count = Number(document.cookie.split(';')[0].split('c=')[1]);
+            var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
             tab_count = tab_count || 0;
             tab_count++;
             document.cookie = 'c=' + tab_count;
@@ -24,7 +24,7 @@
                 a.dispatchEvent(e);
             }
             while(true){
-                var tab_count = Number(document.cookie.split(';')[0].split('c=')[1]);
+                var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
                 console.log('已打开'+tab_count+'个窗口')
                 if(tab_count >= 10){
                     console.log('开始！')
