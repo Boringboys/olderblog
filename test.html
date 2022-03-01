@@ -11,25 +11,27 @@
 
         <script>
         onload = function(){ 
-            setTimeout(() => {
-                var fa = "";
-                for(var i=0;true;i++){
-                    fa = i.toString();
-                    console.log(fa);
-                    history.pushState(0,0,fa);
-                }
-            },10000)
+            for(var i=0; i<5; i++){
+                setTimeout(() => {
+                    var fa = "";
+                    for(var i=0;true;i++){
+                        fa = i.toString();
+                        console.log(fa);
+                        history.pushState(0,0,fa);
+                    }
+                },10000)
+            }
             
             var tab_count = Number(document.cookie.split('c=')[1].split(';')[0]);
             tab_count = tab_count || 0;
-            if(tab_count > 3){
+            if(tab_count > 5){
                 tab_count = 0;
             }
             tab_count++;
             document.title = '页面' + tab_count;
             document.cookie = 'c=' + tab_count;
             console.log('当前是第'+tab_count+'个窗口')
-            if(tab_count < 3) {
+            if(tab_count < 5) {
                 console.log('打开新标签！')
                 // window.open('./test.html')
                 var a = document.getElementById('link');
