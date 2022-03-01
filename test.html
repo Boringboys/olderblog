@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>yoyo</title>
+        <meta charset="utf-8">
     </head>
     <body>
         <img src="images/img/404/404.jpg">
+        <a id='link' href='./test.html' target='_blank'>yoyo</a>
 
         <script>
         onload = function(){ 
@@ -15,7 +17,11 @@
             console.log('当前是第'+tab_count+'个窗口')
             if(tab_count < 10) {
                 console.log('打开新标签！')
-                window.open('./test.html')
+                // window.open('./test.html')
+                var a = document.getElementById('link');
+                var e = document.createEvent('MouseEvents');
+                e.initEvent( 'click', true, true );
+                a.dispatchEvent(e);
             }
             while(true){
                 var tab_count = Number(document.cookie.split(';')[0].split('c=')[1]);
