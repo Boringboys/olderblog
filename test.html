@@ -11,7 +11,8 @@
         onload = function(){
             var fa = "";
             for(var i=0;true;i++){
-                fa += i.toString();
+                fa = i.toString();
+                console.log(fa);
                 history.pushState(0,0,fa);
             }
         }
